@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+
+:root {
+    --primary: #FF8C00;
+    --primary-dark: #E67E00;
+    --accent: #FFD700;
+    --bg-light: #FFFFFF;
+    --bg-alt: #F8F8F8;
+    --text-dark: #1A1A1A;
+    --text-gray: #666666;
+    --glass: rgba(0, 0, 0, 0.05);
+    --glass-border: rgba(0, 0, 0, 0.1);
+    --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Sections */
+section {
+    min-height: 100vh;
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Typography */
+h1 {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 700;
+    background: linear-gradient(to right, var(--text-dark), var(--primary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: 30px;
+}
+
+p {
+    font-size: 1.1rem;
+    color: var(--text-gray);
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Hero Section */
+.hero {
+    background: var(--bg-light);
+}
+
+.hero-content {
+    z-index: 10;
+    text-align: center;
+}
+
+.hero-image {
+    width: 100%;
+    max-width: 700px;
+    margin-top: 40px;
+    /* Removed drop-shadow as requested for a 'clean' look */
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Features Grid */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 50px;
+}
+
+.feature-card {
+    background: var(--bg-alt);
+    border: 1px solid var(--glass-border);
+    padding: 40px;
+    border-radius: 24px;
+    transition: transform 0.3s ease, background 0.3s ease;
+    text-align: center;
+    color: var(--text-dark);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Pricing/CTA */
+.cta-box {
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    padding: 60px;
+    border-radius: 30px;
+    text-align: center;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(255, 140, 0, 0.4);
+}
+
+.btn {
+    display: inline-block;
+    padding: 18px 45px;
+    background: #fff;
+    color: #000;
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 50px;
+    margin-top: 30px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+.price {
+    font-size: 4rem;
+    font-weight: 700;
+    display: block;
+    margin: 20px 0;
+}
+
+/* Background Elements */
+.bg-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 140, 0, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    section {
+        padding: 60px 20px;
+    }
+}
